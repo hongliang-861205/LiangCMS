@@ -10,7 +10,7 @@ var dialog = {
 	},
 	
 	//成功提示
-	success: function(url, message) {
+	success: function(message, url) {
 		layer.open({
 			content: message,
 			icon: 1,
@@ -30,7 +30,7 @@ var dialog = {
 	},
 	
 	//确认弹出层带跳转
-	toconfirm: function(url, message) {
+	toconfirm: function(message, url) {
 		layer.open({
 			content: message,
 			icon: 3,
