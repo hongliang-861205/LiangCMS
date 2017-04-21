@@ -4,12 +4,11 @@ var login = {
 		var password = $('input[name="password"]').val();
 
 		if (!username) {
-			dialog.error("请输入用户名！");
-			return;
+			return dialog.error("请输入用户名！");			
 		}
 		if (!password) {
-			dialog.error("请输入密码！");
-			return;
+			return dialog.error("请输入密码！");
+			
 		}
 
 		var url = "/admin/login/login";

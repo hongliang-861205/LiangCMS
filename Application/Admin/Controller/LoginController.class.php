@@ -6,6 +6,9 @@ use Think\Controller;
 
 class LoginController extends Controller {
 	public function Index() {
+		if (session("adminUser")) {
+			$this->redirect("/admin/index/index");
+		}
 		return $this->display ();
 	}
 	public function Login() {
@@ -13,5 +16,9 @@ class LoginController extends Controller {
 		$password = $_POST ['password'];
 		
 		return D ( "Admin" )->login ( $username, $password );
+	}
+	public function Logout() {
+		session("adminUser", null);
+		$this->redirect("/admin/login/");
 	}
 }
