@@ -23,7 +23,7 @@ var login = {
 				return dialog.error(res.message);
 				break;
 			case 1:
-				return dialog.success(res.message, "/admin/index/index");
+				return dialog.success(res.message, "/admin");
 				break;
 			}
 		}, 'json')

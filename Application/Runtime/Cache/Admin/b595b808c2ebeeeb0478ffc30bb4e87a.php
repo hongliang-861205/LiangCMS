@@ -48,7 +48,7 @@
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
     
-    <a class="navbar-brand" >singcms内容管理平台</a>
+    <a class="navbar-brand" >liangcms内容管理平台</a>
   </div>
   <!-- Top Menu Items -->
   <ul class="nav navbar-right top-nav">
@@ -91,7 +91,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    您好!欢迎使用singcms内容管理平台
+                    您好!欢迎使用liangcms内容管理平台
                 </h1>
                 <ol class="breadcrumb">
                     <li class="active">

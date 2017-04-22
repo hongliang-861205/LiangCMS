@@ -7,7 +7,7 @@ use Think\Controller;
 class LoginController extends Controller {
 	public function Index() {
 		if (session("adminUser")) {
-			$this->redirect("/admin/index/index");
+			$this->redirect("/admin");
 		}
 		return $this->display ();
 	}
@@ -19,6 +19,7 @@ class LoginController extends Controller {
 	}
 	public function Logout() {
 		session("adminUser", null);
-		$this->redirect("/admin/login/");
+		$this->redirect("/admin/login");
+
 	}
 }
