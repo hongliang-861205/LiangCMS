@@ -106,15 +106,15 @@
         </div>
         <!-- /.row -->
         <div class="row">
-            <form action="/admin.php" method="get">
+            <form action="/admin" method="get">
 
                 <div class="input-group">
                     <span class="input-group-addon">类型</span>
                     <select class="form-control" name="type">
                         <option value='' >请选择类型</option>
 
-                        <option value="1" >后台菜单</option>
-                        <option value="0" >前端导航</option>
+                        <option value="1" <?php if($type==1): ?>selected="selected"<?php endif; ?> >后台菜单</option>
+                        <option value="0" <?php if($type==0): ?>selected="selected"<?php endif; ?> >前端导航</option>
                     <lect>
                 </div>
 
