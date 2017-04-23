@@ -53,6 +53,6 @@
 layui.config({
   base: '/public/js/modules/' //你的模块目录
 }).use('index'); //加载入口
-</script> 
+</script>
 </body>
 </html>
