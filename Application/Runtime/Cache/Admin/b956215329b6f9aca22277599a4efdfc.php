@@ -154,7 +154,8 @@
                                 <td><?php echo ($menu["m"]); ?></td>
                                 <td><?php echo (getMenuType($menu["type"])); ?></td>
                                 <td><?php echo (getMenuStatus($menu["status"])); ?></td>
-                                <td><span class="glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id=""></span>    <a href="javascript:void(0)" attr-id="" id="singcms-delete"  attr-a="menu" attr-message="删除"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></td>
+                                <td><span class="glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id="<?php echo ($menu["menu_id"]); ?>"></span>
+                                    <a href="javascript:void(0)" attr-id="" id="singcms-delete"  attr-a="menu" attr-message="删除"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></td>
                             </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 
                         </tbody>
@@ -186,8 +187,8 @@
 <script>
 
     var SCOPE = {
-        'add_url' : '/admin/menu/add/',
-        'edit_url' : '/admin.php?c=menu&a=edit',
+        'add_url' : '/admin/menu/add',
+        'edit_url' : '/admin/menu/edit',
         'set_status_url' : '/admin.php?c=menu&a=setStatus',
         'listorder_url' : '/admin.php?c=menu&a=listorder',
 

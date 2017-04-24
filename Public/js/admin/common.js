@@ -11,7 +11,7 @@ $("#singcms-button-submit").click(function(){
 	var postData = {};
 	$(data).each(function(i){
 		postData[this.name] = this.value;
-	})
+	});
 	var save_url = SCOPE.save_url;
 	var jump_url = SCOPE.jump_url;
 	$.post(save_url, postData, function(res){
@@ -24,4 +24,13 @@ $("#singcms-button-submit").click(function(){
 			break;
 		}
 	}, "json")
-})
+});
+
+/**
+ * 编辑按钮操作
+ */
+$(".singcms-table #singcms-edit").click(function () {
+    var id = $(this).attr("attr-id");
+    var edit_url = SCOPE.edit_url;
+    window.location.href = edit_url + "?id=" + id;
+});
