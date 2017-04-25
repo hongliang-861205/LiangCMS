@@ -96,7 +96,7 @@
 
                 <ol class="breadcrumb">
                     <li>
-                        <i class="fa fa-dashboard"></i>  <a href="/admin.php?c=menu">菜单管理</a>
+                        <i class="fa fa-dashboard"></i>  <a href="/admin／menu">菜单管理</a>
                     </li>
                     <li class="active">
                         <i class="fa fa-table"></i>
@@ -148,14 +148,14 @@
                         </thead>
                         <tbody>
                         	<?php if(is_array($menuList)): $i = 0; $__LIST__ = $menuList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><tr>
-                                <td><input size="4" type="text" name="" value=""/></td>
+                                <td><input size="4" type="text" name="listOrder[<?php echo ($menu["menu_id"]); ?>]" value="<?php echo ($menu["listorder"]); ?>"/></td>
                                 <td><?php echo ($menu["menu_id"]); ?></td>
                                 <td><?php echo ($menu["name"]); ?></td>
                                 <td><?php echo ($menu["m"]); ?></td>
                                 <td><?php echo (getMenuType($menu["type"])); ?></td>
                                 <td><?php echo (getMenuStatus($menu["status"])); ?></td>
                                 <td><span class="glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id="<?php echo ($menu["menu_id"]); ?>"></span>
-                                    <a href="javascript:void(0)" attr-id="" id="singcms-delete"  attr-a="menu" attr-message="删除"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></td>
+                                    <a href="javascript:void(0)" attr-id="<?php echo ($menu["menu_id"]); ?>" id="singcms-delete"  attr-a="menu" attr-message="删除"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></td>
                             </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 
                         </tbody>
@@ -172,7 +172,9 @@
 
         </div>
         <!-- /.row -->
-
+        <div>
+            <button  id="button-listorder" type="button" class="btn btn-primary dropdown-toggle" > 更新排序 </button>
+        </div>
 
 
     </div>
@@ -189,8 +191,8 @@
     var SCOPE = {
         'add_url' : '/admin/menu/add',
         'edit_url' : '/admin/menu/edit',
-        'set_status_url' : '/admin.php?c=menu&a=setStatus',
-        'listorder_url' : '/admin.php?c=menu&a=listorder',
+        'set_status_url' : '/admin/menu/setStatus',
+        'listOrder_url' : '/admin/menu/listOrder',
 
     }
 </script>

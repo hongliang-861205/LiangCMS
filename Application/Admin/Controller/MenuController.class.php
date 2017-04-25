@@ -2,18 +2,14 @@
 
 namespace Admin\Controller;
 
-use Think\Controller;
+use Think\Page;
 
 class MenuController extends CommonController
 {
     public function Index()
     {
         $data = array();
-        if (isset ($_GET ['type']) && in_array($_GET ['type'], array(
-                0,
-                1
-            ))
-        ) {
+        if (isset ($_GET ['type']) && in_array($_GET ['type'], array(0, 1))) {
             $data ['type'] = $_GET ['type'];
             $this->assign("type", $data ['type']);
         } else {
@@ -21,11 +17,11 @@ class MenuController extends CommonController
         }
 
         $page = $_GET ['p'] ? $_GET ['p'] : 1;
-        $pagesize = $_GET ['pageSize'] ? $_GET ['pageSize'] : 3;
-        $menuList = D("menu")->getMenus($data, $page, $pagesize);
+        $pageSize = $_GET ['pageSize'] ? $_GET ['pageSize'] : 3;
+        $menuList = D("menu")->getMenus($data, $page, $pageSize);
         $menuCount = D("menu")->getMenusCount($data);
 
-        $res = new \Think\Page ($menuCount, $pagesize);
+        $res = new Page ($menuCount, $pageSize);
         $pageRes = $res->show();
         $this->assign('pageRes', $pageRes);
         $this->assign('menuList', $menuList);
@@ -72,20 +68,68 @@ class MenuController extends CommonController
         $this->display();
     }
 
-    public function save($data) {
+    public function save($data)
+    {
         $menuId = $_POST['menu_id'];
         unset($_POST['menu_id']);
 
-        try{
+        try {
             $res = D("menu")->updateMenuById($menuId, $data);
-            if($res == false) {
-                show(0, "更新菜单失败！");
+            if ($res == false) {
+                return show(0, "更新菜单失败！");
             } else {
-                show(1, "更新菜单成功！");
+                return show(1, "更新菜单成功！");
             }
         } catch (exception $ex) {
             return show(0, $ex->getMessage());
         }
 
+    }
+
+    public function setStatus()
+    {
+        if ($_POST) {
+            $id = $_POST['menu_id'];
+            $status = $_POST['status'];
+
+            try {
+                $res = D("Menu")->updateMenuStatusById($id, $status);
+                if ($res == false) {
+                    return show(0, "删除该菜单失败！");
+                } else {
+                    return show(1, "删除菜单成功！");
+                }
+            } catch (exception $ex) {
+                return show(0, $ex->getMessage());
+            }
+        }
+    }
+
+    public function listOrder() {
+        if($_POST) {
+            $listOrder = $_POST['listOrder'];
+            $errors = array();
+            $jump_url = $_SERVER["HTTP_REFERER"];
+            if($listOrder && is_array($listOrder)) {
+                try{
+                    foreach ($listOrder as $menuId => $val) {
+                        $res = D("Menu")->updateMenuListOrderById($menuId, $val);
+                        if($res === false) {
+                            $errors[] = $menuId;
+                        }
+                    }
+                } catch (exception $ex) {
+                    return show(0, $ex->getMessage(), array('jump_url' => $jump_url));
+                }
+
+                if($errors) {
+                    return show(0, "排序失败-".implode(',', $errors), array('jump_url' => $jump_url));
+                } else {
+                    return show(1, "排序成功！", array('jump_url' => $jump_url));
+                }
+            }
+
+            return show(0, "排序数据失败！", array('jump_url' => $jump_url));
+        }
     }
 }

@@ -1911,3 +1911,173 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000394s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000437s ]
 
+[ 2017-04-24T22:43:52+08:00 ] 127.0.0.1 /admin/menu/edit?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cms_menu` WHERE `menu_id` = '2' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006901s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006931s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000469s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000498s ]
+
+[ 2017-04-24T22:44:02+08:00 ] 127.0.0.1 /admin/menu/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000922s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000620s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+NOTIC: [8] Undefined variable: menus /Users/hongliang/WebServer/LiangCMS/Application/Runtime/Cache/Admin/31553d7bb41170a30982ff9dddd5d67e.php 第 124 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011126s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011163s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000608s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000667s ]
+
+[ 2017-04-24T22:45:04+08:00 ] 127.0.0.1 /Admin/Menu/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000254s ]
+NOTIC: [8] Undefined index: pageSize /Users/hongliang/WebServer/LiangCMS/Application/Admin/Controller/MenuController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 ORDER BY `menu_id` desc LIMIT 0,3   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_menu` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005096s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005131s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000117s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000374s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000407s ]
+
+[ 2017-04-24T22:45:05+08:00 ] 127.0.0.1 /Admin/Menu/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000410s ]
+NOTIC: [8] Undefined index: pageSize /Users/hongliang/WebServer/LiangCMS/Application/Admin/Controller/MenuController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 ORDER BY `menu_id` desc LIMIT 0,3   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_menu` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011043s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011091s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000118s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000462s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000522s ]
+
+[ 2017-04-24T22:45:08+08:00 ] 127.0.0.1 /admin/menu/edit%EF%BC%8Fid/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000201s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000292s ]
+ERR: 非法操作:edit／id
+
+[ 2017-04-24T22:45:42+08:00 ] 127.0.0.1 /admin/menu/edit%EF%BC%8Fid/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000286s ]
+ERR: 非法操作:edit／id
+
+[ 2017-04-24T22:45:43+08:00 ] 127.0.0.1 /admin/menu/edit%EF%BC%8Fid/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000266s ]
+ERR: 非法操作:edit／id
+
+[ 2017-04-24T22:45:50+08:00 ] 127.0.0.1 /admin/menu/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000271s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+NOTIC: [8] Undefined index: p /Users/hongliang/WebServer/LiangCMS/Application/Admin/Controller/MenuController.class.php 第 23 行.
+NOTIC: [8] Undefined index: pageSize /Users/hongliang/WebServer/LiangCMS/Application/Admin/Controller/MenuController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 ORDER BY `menu_id` desc LIMIT 0,3   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_menu` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005394s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005432s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000105s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000128s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005023s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005096s ]
+
+[ 2017-04-24T22:45:54+08:00 ] 127.0.0.1 /admin/menu/edit?id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000237s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cms_menu` WHERE `menu_id` = '3' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000056s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004887s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005224s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000729s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000821s ]
+
