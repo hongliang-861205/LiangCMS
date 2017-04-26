@@ -33,3 +33,21 @@ function getMenuStatus($status) {
 	}
 	return $str;
 }
+
+function getMenuUrl($nav) {
+    $url = "/".$nav['m']."/".nav['c'].'/'.$nav['f'];
+    if(strtolower($nav['f']) == "index") {
+        $url = "/".$nav['m']."/".$nav['c'];
+    }
+    return $url;
+}
+
+function getActive($navc) {
+    $c = strtolower(CONTROLLER_NAME);
+
+    if(strtolower($navc) == $c) {
+        return "class='active'";
+    }
+
+    return "";
+}

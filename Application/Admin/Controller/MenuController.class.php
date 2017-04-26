@@ -3,6 +3,7 @@
 namespace Admin\Controller;
 
 use Think\Page;
+use Think\Controller;
 
 class MenuController extends CommonController
 {
@@ -63,7 +64,8 @@ class MenuController extends CommonController
     public function edit()
     {
         $menuId = $_GET['id'];
-        $menu = D("menu")->getMenuById($menuId);
+        $menu = D("Menu")->getMenuById($menuId);
+
         $this->assign("menu", $menu);
         $this->display();
     }
@@ -131,5 +133,7 @@ class MenuController extends CommonController
 
             return show(0, "排序数据失败！", array('jump_url' => $jump_url));
         }
+
     }
+
 }

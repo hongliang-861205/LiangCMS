@@ -1,9 +1,14 @@
 <?php
 namespace Admin\Controller;
-use Think\Controller;
 
-class IndexController extends CommonController {
-	public function Index() {
-		$this->display();
-	}
+
+class IndexController extends CommonController
+{
+    public function Index()
+    {
+        $menus = D("Menu")->getAdminMenus();
+
+        $this->assign("menus", $menus);
+        $this->display();
+    }
 }

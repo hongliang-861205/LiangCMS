@@ -41,7 +41,7 @@ class MenuModel extends Model
         if (!$id || !is_numeric($id)) {
             return array();
         }
-        $where["menu_id"] = array('eq', $id);
+        $where["menu_id"] = $id;
         return $this->_db->where($where)->find();
     }
 
@@ -81,5 +81,14 @@ class MenuModel extends Model
         $data['listorder'] = $listOrder;
 
         return $this->_db->where($where)->save($data);
+    }
+
+    public function getAdminMenus(){
+        $where = array(
+            'type' => 1,
+            'status' => 1
+        );
+
+        return $this->_db->where($where)->order(array("listorder" => "asc", "menu_id" => "asc"))->select();
     }
 }
